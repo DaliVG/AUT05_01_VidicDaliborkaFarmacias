@@ -1,19 +1,19 @@
 package es.cifpcm;
 
 public class Farmacia {
-    public String NOMBRE;
-    public String TELEFONO;
-    public Float UTM_X;
-    public Float UTM_Y;
-    public String LUNES;
-    public String MARTES;
-    public String MIERCOLES;
-    public String JUEVES;
-    public String VIERNES;
-    public String SABADO;
-    public String DOMINGO;
+    private String NOMBRE;
+    private String TELEFONO;
+    private Float UTM_X;
+    private Float UTM_Y;
+    private String LUNES;
+    private String MARTES;
+    private String MIERCOLES;
+    private String JUEVES;
+    private String VIERNES;
+    private String SABADO;
+    private String DOMINGO;
 
-    public String WEB;
+    private String WEB;
 
     public String getNOMBRE() {
         return NOMBRE;

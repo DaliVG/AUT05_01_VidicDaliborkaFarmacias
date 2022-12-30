@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,8 @@ public class impPersistenciaVidic implements Persistencia{
     @Override
     public boolean openJSON(){
 
-        File fileDone = new File(System.getProperty("java.io.tmpdir")+fileName);
+        URL resource = getClass().getClassLoader().getResource(fileName);
+        File fileDone = new File(resource.getFile());
             try {
                 FileReader fileReader = new FileReader(fileDone);
                 Type type = new TypeToken<List<Farmacia>>(){}.getType();
@@ -31,6 +33,31 @@ public class impPersistenciaVidic implements Persistencia{
             }
 
         return true;
+    }
+
+    @Override
+    public  List<Farmacia> buscararea2(List<Farmacia> sucursales, Farmacia sucursalCerca) {
+
+        float coordUxCerca = sucursalCerca.getUTM_X();
+        float coordUyCerca = sucursalCerca.getUTM_Y();
+        float coordMaxUx = coordUxCerca + 1600f;
+        float coordMinUx = coordUxCerca - 1600f;
+        float coordMaxUy = coordUyCerca + 16000f;
+        float coordMinUy = coordUyCerca - 16000f;
+
+        List<Farmacia> searchFinal = new ArrayList<>();
+
+        for (Farmacia sucursal : sucursales) {
+
+            if (sucursal.getUTM_X()<=coordMaxUx && sucursal.getUTM_X()>=coordMinUx) {
+                if (sucursal.getUTM_Y()<=coordMaxUy && sucursal.getUTM_Y()>=coordMinUy) {
+
+                    searchFinal.add(sucursal);
+
+                }
+            }
+        }
+        return searchFinal;
     }
 
     @Override
