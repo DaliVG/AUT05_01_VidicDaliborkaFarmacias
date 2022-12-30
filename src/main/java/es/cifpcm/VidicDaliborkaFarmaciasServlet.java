@@ -37,14 +37,17 @@ public class VidicDaliborkaFarmaciasServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         pst.openJSON();
-
-        out.println("<table>\n");
+        out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"././css/style.css\"/> ");
+        out.append("<table>\n");
+        out.append("<thead>\n");
         out.append("<tr>\n");
         out.append("<th>Nombre:</th>\n");
         out.append("<th>Web:</th>\n");
         out.append("<th>Coordenadas X:</th>\n");
         out.append("<th>Coordenadas Y:</th>\n");
         out.append("</tr>\n");
+        out.append("</thead>\n");
+        out.append("<tbody>\n");
         for (Farmacia sucursalMos : busqueda
         ) {
             out.append("<tr>\n");
@@ -54,6 +57,7 @@ public class VidicDaliborkaFarmaciasServlet extends HttpServlet {
             out.append("<td>" + sucursalMos.getUTM_Y() + "</td>\n");
             out.append("</tr>\n");
         }
+        out.append("</tbody>\n");
         out.append("</table>\n");
     }
 }
