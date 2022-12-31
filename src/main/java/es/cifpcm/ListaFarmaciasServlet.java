@@ -69,6 +69,8 @@ public class ListaFarmaciasServlet extends HttpServlet {
         out.append("</tbody>\n");
         out.append("</table>\n");
 
+        out.append("<a href=\"http://localhost:8080/VidicDaliborkaFarmacias\">Volver a inicio</a>");
+
     }
 
 }
