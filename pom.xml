@@ -2,14 +2,14 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>es.cifpcm</groupId>
-  <artifactId>AUT05_01_VidicDaliborkaFarmacias</artifactId>
+  <artifactId>GaleriaImagenesVidic</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <properties>
     <maven.compiler.source>17</maven.compiler.source>
     <maven.compiler.target>17</maven.compiler.target>
   </properties>
-  <name>AUT05_01_VidicDaliborkaFarmacias Maven Webapp</name>
+  <name>GaleriaImagenesVidic Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -36,6 +36,6 @@
      </dependency>-->
   </dependencies>
   <build>
-    <finalName>AUT05_01_VidicDaliborkaFarmacias</finalName>
+    <finalName>GaleriaImagenesVidic</finalName>
   </build>
 </project>
